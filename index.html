@@ -9,10 +9,46 @@
     <script src="script.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800,900&amp;subset=latin-ext" rel="stylesheet">
     <title>Weekly WebDev Challenge#2</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        //smooth to id
+        $(document).ready(function() {
+            $('a[href^="#"]').on('click', function(event) {
+                var target = $($(this).attr('href'));
+                if (target.length) {
+                    event.preventDefault();
+                    $('html, body').animate({
+                        scrollTop: target.offset().top
+                    }, 1000);
+                }
+            });
+        });
+    </script>
 </head>
 
 <body>
-    <section class="home">
+    <section class="home" id="HomeSection">
+        <nav id="main">
+            <div class="navcontent">
+                <div class="ulNavLogoHamburger">
+                 <img class="logoTop" src="img/logologo.png" />    
+                    <div id="nav-iconHamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+                <ul id="navul">
+                    <li class="NavLinks"><a href="#HomeSection">HOME</a></li>
+                    <li class="NavLinks"><a href="#ABOUTSection">ABOUT</a></li>
+                    <li class="NavLinks"><a href="#SERVICESection">SERVICES</a></li>
+                    <li class="NavLinks"><a href="#GALLERYSection">GALLERY</a></li>
+                    <li class="NavLinks"><a href="#BLOGSection">BLOG</a></li>
+                    <li class="NavLinks"><a href="#CONTACTSection">CONTACT</a></li>
+                </ul>
+            </div>
+        </nav>
         <div class=" container homeContainer">
             <div class="homecontent">
                 <h1 class="hometext">Fresh Life</h1>
@@ -22,8 +58,7 @@
             </div>
         </div>
     </section>
-
-    <section class="about">
+    <section class="about" id="ABOUTSection">
         <div class="container aboutContainer">
             <img class="cup" src="img/cup.png" alt="cup with raspberries" title="cup" />
             <div class="aboutContents">
@@ -35,11 +70,9 @@
                     Nim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore.
                 </p>
             </div>
-
         </div>
     </section>
-
-    <section class="services">
+    <section class="services" id="SERVICESection">
         <div class="container servicesContainer">
             <div class="servicesContents">
                 <div class="ourservices">
@@ -70,8 +103,7 @@
             <img id="tomatoes" src="img/tomatoes2.png" alt="tomatoes" title="tomatoes" />
         </div>
     </section>
-
-    <section class="gallery">
+    <section class="gallery" id="GALLERYSection">
         <div class="container gallery">
             <div class="textgallery">
                 <h1 class="gallerytext">Gallery</h1>
@@ -94,7 +126,6 @@
             <button class="button viewmore blue ">VIEW MORE</button>
         </div>
     </section>
-
     <section class="subscribe">
         <div class="container subscribe">
             <div class="subscibeform">
@@ -110,8 +141,7 @@
             </div>
         </div>
     </section>
-
-    <section class="blog">
+    <section class="blog" id="BLOGSection">
         <div class="container blogContainer">
             <div class="textblog">
                 <h1 class="blogtext">Blog</h1>
@@ -168,7 +198,7 @@
             <button class="button viewmore red ">VIEW MORE</button>
         </div>
     </section>
-    <section class="contact">
+    <section class="contact" id="CONTACTSection">
         <div class="container contactContainer">
             <div class="textcontact">
                 <h1 class="contacttext">Contact</h1>
@@ -176,34 +206,80 @@
                     For new projects, ideas, business or anythingyou'd like to discuss, contact with me!
                 </p>
             </div>
-
             <div class="content-down">
-                <div class="form">
-                    <div class="formname">
-                        <p class="fornameText">Auskteez Tran</p>
-                    </div>
-                    <form class="form">
-                        <input class="input-form-contact" type="email" name="Your Email" required="required" placeholder="   Your Email..">
-                        <input class="input-form-contact" type="tel" name="Enter your Phone number" required="required" placeholder="   Your phone number...">
-                        <textarea class="input-form-contact" placeholder=" Your messge..."></textarea>
-                    </form>
+                <form class="form">
+                    <input class="input-form-contact" type="text" name="Your Name" required="required" placeholder="Your Name..">
+                    <input class="input-form-contact" type="email" name="Your Email" required="required" placeholder="Your Email..">
+                    <input class="input-form-contact" type="tel" name="Enter your Phone number" required="required" placeholder=" Your phone number...">
+                    <textarea class="input-form-contact" placeholder=" Your messge..."></textarea>
+                </form>
+                <div class="address">
+                    <p class="contact-adresess headline ">ADDRESS</p>
+                    <p class="contact-adresess information ">123 City name, Street, City, Country</p>
+                    <p class="contact-adresess headline ">EMAIL</p>
+                    <p class="contact-adresess information ">cahee@domain.com</p>
+                    <p class="contact-adresess headline ">PHONE</p>
+                    <p class="contact-adresess information "> +012 345 6789</p>
                 </div>
-                    <div class="address">
-                        <p class="contact-adresess headline ">ADDRESS</p>
-                        <p class="contact-adresess information ">123 City name, Street, City, Country</p>
-                        <p class="contact-adresess headline ">EMAIL</p>
-                        <p class="contact-adresess information ">cahee@domain.com</p>
-                        <p class="contact-adresess headline ">PHONE</p>
-                        <p class="contact-adresess information "> +012 345 6789</p>
-                    </div>
             </div>
         </div>
     </section>
     <footer>
-  <p class="footer-text">© 2015 Company. All right reserved.</p>
-    <img class="footerLogo" src="img/logo.png" alt="Cahee" title="logo" />
-  <p class="footer-text">Made with <span class="love">love</span> by Auskteez.</p>
-</footer>
-
+        <p class="footer-text">© 2015 Company. All right reserved.</p>
+        <img class="footerLogo" src="img/logo.png" alt="Cahee" title="logo" />
+        <p class="footer-text">Made with <span class="love">love</span> by Auskteez.</p>
+    </footer>
 </body>
+<script>
+    let flag = 0;
+    const nav = document.querySelector('#main');
+    let topOfNav = nav.offsetTop;
+
+    function fixNav() {
+        if (window.scrollY >= topOfNav) {
+            document.body.style.paddingTop = nav.offsetHeight + 'px';
+            document.body.classList.add('fixed-nav');
+        } else {
+            if (flag == 0) {
+                document.body.classList.remove('fixed-nav');
+                document.body.style.paddingTop = 0;
+            }
+        }
+    }
+    window.addEventListener('scroll', fixNav);
+    const hambureger = document.querySelector('#nav-iconHamburger');
+    const ull = document.querySelector('#navul');
+    hambureger.onclick = function() {
+        if (flag == 0) {
+            ull.classList.add('isVisable');
+            document.body.classList.add('fixed-nav');
+            hambureger.classList.add('open');
+
+            flag = 1;
+        } else {
+            ull.classList.remove('isVisable')
+            hambureger.classList.remove('open');
+            flag = 0;
+        }
+    };
+    //360 rotate image cup
+    const cup = document.querySelector(".cup");
+    cup.onclick = function() {
+        cup.classList.add('transist');
+        setTimeout(myFunc => {
+            cup.classList.remove('transist');
+        }, 1000);
+    };
+    //on Click navLink close NaV (on mobile)
+    const NavLinks = document.querySelectorAll('.NavLinks');
+    for (var i = 0, len = NavLinks.length; i < len; i++) {
+        NavLinks[i].onclick = function() {
+            console.log("fs");
+            ull.classList.remove('isVisable')
+            hambureger.classList.remove('open');
+            flag = 0;
+        }
+    }
+</script>
+
 </html>
