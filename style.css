@@ -747,12 +747,17 @@ span.love {
         display: flex;
         justify-content: center;
     }
-    h1.abouttext {
+    h1{
         text-align: center;
-        font-size: 11vw;
     }
-    h1.tomatoestext {
-        font-size: 11vw;
+    h1.abouttext{
+        font-size:17vw;
+    }
+    h1.gallerytext,h1.blogtext,h1.contacttext {
+        font-size: 20vw;
+    }
+    .ourservices{
+        max-width: 100%;
     }
     img.galleryImg.large, img.galleryImg.small, img.galleryImg.medium {
         width: 80%;
@@ -798,6 +803,7 @@ span.love {
         width: 100%;
         height: 100%;
     }
+
 }
 
 /* -----hamburegerNavIco----- */
