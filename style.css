@@ -37,7 +37,7 @@ section {
 
 nav {
     z-index: 99;
-    transition: all 0.8s;
+    transition: all 0.4s;
     position: fixed;
     top: 20px;
     width: 100%;
@@ -89,7 +89,6 @@ body.fixed-nav nav {
     -webkit-box-shadow: 0px 10px 53px -16px rgba(0, 0, 0, 0.68);
     -moz-box-shadow: 0px 10px 53px -16px rgba(0, 0, 0, 0.68);
     box-shadow: 0px 10px 53px -16px rgba(0, 0, 0, 0.68);
-    transition-duration: 250ms;
 }
 
 #nav-iconHamburger {
@@ -147,6 +146,7 @@ section.home {
 .hometext {
     color: #262626;
     font-family: Raleway, sans-serif;
+    text-align: left;
 }
 
 h1.hometext {
@@ -284,7 +284,6 @@ p.divServiciesText {
 
 section.gallery {
     background-color: #ffe92f;
-    min-height: 1536px;
 }
 
 .container.gallery {
@@ -293,7 +292,7 @@ section.gallery {
 }
 
 .photos {
-    min-height: 980px;
+    /* min-height: 980px; */
     width: 1170px;
     display: flex;
     flex-direction: column;
@@ -304,6 +303,7 @@ section.gallery {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin-top: 1%;
 }
 
 .twosmall {
@@ -312,8 +312,22 @@ section.gallery {
     justify-content: space-between;
 }
 
-img.galleryImg {
+.photos img {
     box-shadow: 0.5px 0.5px 10px 0.5px #454545;
+}
+
+.pophotos {
+    margin-top: 1%;
+    margin-bottom: : 1%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.pophotos img {
+    margin-top: 1%;
+    width: 570px;
+    height: 400px;
+    margin-bottom: 2%;
 }
 
 img.galleryImg.large {
@@ -370,7 +384,26 @@ p.gallerytext {
     background-color: #5585a2;
 }
 
-.rowphotos img:hover {
+.motionButton {
+    -webkit-animation: motionButton 0.75s infinite;
+}
+
+@-webkit-keyframes motionButton {
+    0% {
+        transform: scale(1, 1.1) translate(0px, 0px);
+    }
+    30% {
+        transform: scale(1, 1) translate(0px, 1px);
+    }
+    75% {
+        transform: scale(1, 1) translate(0px, -2px);
+    }
+    100% {
+        transform: scale(1, 1.1) translate(0px, 0px);
+    }
+}
+
+.photos img:hover {
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
     transition: all 0.2s ease;
@@ -391,7 +424,6 @@ section.subscribe {
 
 .subscibeform {
     width: 570px;
-    height: 192px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -747,23 +779,27 @@ span.love {
         display: flex;
         justify-content: center;
     }
-    h1{
+    h1 {
         text-align: center;
     }
-    h1.abouttext{
-        font-size:17vw;
+    h1.abouttext {
+        font-size: 17vw;
     }
-    h1.gallerytext,h1.blogtext,h1.contacttext {
+    h1.gallerytext, h1.blogtext, h1.contacttext {
         font-size: 20vw;
     }
-    .ourservices{
-        max-width: 100%;
+    .ourservices {
+        max-width: 90%;
     }
-    img.galleryImg.large, img.galleryImg.small, img.galleryImg.medium {
+    img.galleryImg.large, img.galleryImg.small, img.galleryImg.medium, img.pophoto {
         width: 80%;
         height: 80%;
     }
-    .rowphotos.down, .rowphotos.up, .twosmall {
+    .pophotos img {
+        width: 80%;
+        height: 80%;
+    }
+    .rowphotos.down, .rowphotos.up, .twosmall, .pophotos {
         display: flex;
         justify-content: center;
         flex-direction: column;
@@ -803,7 +839,9 @@ span.love {
         width: 100%;
         height: 100%;
     }
-
+    .blog-title-text.title {
+        font-size: 16px;
+    }
 }
 
 /* -----hamburegerNavIco----- */
@@ -880,4 +918,20 @@ span.love {
     top: 18px;
     width: 0%;
     left: 50%;
+}
+
+/* -------POP AJAX------- */
+
+.galleryPopWindow {}
+
+.modal {
+    max-height: calc(100% - 100px);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffff;
+    height: 50%;
+    width: 50%;
+    z-index: 99;
 }

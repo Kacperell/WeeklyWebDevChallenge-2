@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="Stylesheet" type="text/css" href="style.css" />
-    <script src="script.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800,900&amp;subset=latin-ext" rel="stylesheet">
     <title>Weekly WebDev Challenge#2</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -122,8 +121,11 @@
                     <img class="galleryImg medium" src="img/gallery4.png" alt="blueberries" title="blueberries" />
                     <img class="galleryImg medium" src="img/gallery5.png" alt="pumpkin" title="pumpkin" />
                 </div>
+                <div class="pophotos"></div>
             </div>
-            <button class="button viewmore blue ">VIEW MORE</button>
+
+            <button class="button viewmore blue motionButton ">VIEW MORE</button>
+
         </div>
     </section>
     <section class="subscribe">
@@ -230,56 +232,6 @@
         <p class="footer-text">Made with <span class="love">love</span> by Auskteez.</p>
     </footer>
 </body>
-<script>
-    let flag = 0;
-    const nav = document.querySelector('#main');
-    let topOfNav = nav.offsetTop;
-
-    function fixNav() {
-        if (window.scrollY >= topOfNav) {
-            document.body.style.paddingTop = nav.offsetHeight + 'px';
-            document.body.classList.add('fixed-nav');
-        } else {
-            if (flag == 0) {
-                document.body.classList.remove('fixed-nav');
-                document.body.style.paddingTop = 0;
-            }
-        }
-    }
-    window.addEventListener('scroll', fixNav);
-    const hambureger = document.querySelector('#nav-iconHamburger');
-    const ull = document.querySelector('#navul');
-    hambureger.onclick = function() {
-        if (flag == 0) {
-            ull.classList.add('isVisable');
-            document.body.classList.add('fixed-nav');
-            hambureger.classList.add('open');
-
-            flag = 1;
-        } else {
-            ull.classList.remove('isVisable')
-            hambureger.classList.remove('open');
-            flag = 0;
-        }
-    };
-    //360 rotate image cup
-    const cup = document.querySelector(".cup");
-    cup.onclick = function() {
-        cup.classList.add('transist');
-        setTimeout(myFunc => {
-            cup.classList.remove('transist');
-        }, 1000);
-    };
-    //on Click navLink close NaV (on mobile)
-    const NavLinks = document.querySelectorAll('.NavLinks');
-    for (var i = 0, len = NavLinks.length; i < len; i++) {
-        NavLinks[i].onclick = function() {
-            console.log("fs");
-            ull.classList.remove('isVisable')
-            hambureger.classList.remove('open');
-            flag = 0;
-        }
-    }
-</script>
+<script src="script.js"></script>
 
 </html>
