@@ -705,7 +705,7 @@ p.contact-adresess.information {
 
 .textcontact {
     margin-top: 15px;
-    max-width: 368px;
+    max-width: 100%;
     text-align: center;
     display: flex;
     flex-direction: column;
