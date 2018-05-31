@@ -3,4 +3,4 @@ Rozwiązanie zadania nr2 (Weekly WebDev Challenge) na podstawie projektu graficz
 
 preview- https://kacperell.github.io/WeeklyWebDevChallenge-2/
 
-#PSDtoHTML#CSS#Flexbox#JS
+#PSDtoHTML#CSS#Flexbox#JS#FetchAPI_img
